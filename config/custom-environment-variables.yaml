@@ -1,0 +1,12 @@
+ExternalServer:
+  publicFolderPath: EXTERNAL_SERVER_PUBLIC_FOLDER_PATH
+  baseUrl: EXTERNAL_SERVER_BASE_URL
+
+Database:
+  host: DATABASE_HOST
+  port: DATABASE_PORT
+  username: DATABASE_USER
+  password: DATABASE_PASSWORD
+  name: DATABASE_NAME
+
+JWTSecret: JWT_SECRET

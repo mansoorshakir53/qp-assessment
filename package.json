@@ -1,0 +1,56 @@
+{
+  "name": "qp_grocery",
+  "version": "1.0.0",
+  "description": "Grocery Booking Api",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc --build",
+    "rollback-migration": "knex migrate:rollback --env configuration",
+    "prestart": "npx knex migrate:latest --env configuration",
+    "start": "node dist/index.js",
+    "dev": "npx nodemon src/index.ts",
+    "app-up": "docker-compose up --build",
+    "app-down": "docker-compose down --remove-orphans --volumes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mansoorshakir53/qp-assessment.git"
+  },
+  "keywords": [
+    "qp",
+    "grocery",
+    "api"
+  ],
+  "author": "mansoorshakir642@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mansoorshakir53/qp-assessment/issues"
+  },
+  "homepage": "https://github.com/mansoorshakir53/qp-assessment#readme",
+  "dependencies": {
+    "config": "^3.3.12",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "log4js": "^6.9.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.7",
+    "pg": "^8.13.1",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/config": "^3.3.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/multer": "^1.4.12",
+    "@types/pg": "^8.11.10",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "typescript-eslint": "^8.15.0"
+  }
+}

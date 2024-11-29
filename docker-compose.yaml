@@ -1,0 +1,52 @@
+version: '3'
+services:
+  app:
+    depends_on:
+      database:
+        condition: service_healthy
+    build: .
+    volumes:
+      - app_volume:/home/node/app/public/images
+    container_name: grocery-booking-api
+    restart: always
+    ports:
+      - 5050:5050
+    environment:
+      - EXTERNAL_SERVER_PUBLIC_FOLDER_PATH=/home/node/app/public
+      - EXTERNAL_SERVER_BASE_URL=http://localhost:5050
+      - DATABASE_HOST=database
+      - DATABASE_PORT=5432
+      - DATABASE_USER=qp_user
+      - DATABASE_PASSWORD=qp_password
+      - DATABASE_NAME=qp_grocery
+      - JWT_SECRET=qp_grocery_booking_api
+    networks:
+      - qp_network
+
+  database:
+    image: postgres:16-alpine
+    container_name: qp-database
+    ports:
+      - 5433:5432
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d qp_grocery -U qp_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      - POSTGRES_PASSWORD=qp_password
+      - POSTGRES_USER=qp_user
+      - PGUSER=qp_user
+      - POSTGRES_DB=qp_grocery
+    networks:
+      - qp_network
+
+networks:
+  qp_network:
+    driver: bridge
+
+volumes:
+  db_volume:
+  app_volume:

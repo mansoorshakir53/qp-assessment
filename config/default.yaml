@@ -1,0 +1,9 @@
+ExternalServer:
+  port: 5050
+
+Logger:
+  level: debug
+
+Database:
+  minConnections: 5
+  maxConnections: 20
