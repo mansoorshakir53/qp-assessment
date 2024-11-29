@@ -10,16 +10,23 @@ Clone the project.
 git clone https://github.com/mansoorshakir53/qp-assessment.git
 ```
 
+Go to project.
+
+```bash
+cd qp-assessment
+```
+
 Run the project.
 
 ```bash
-docker-compose up --build -d
+sudo docker-compose up --build -d
 ```
 Down the project.
 
 ```bash
-docker-compose down --remove-orphans
+sudo docker-compose down --remove-orphans
 ```
+
 ## Usage
 
 Import QP ASSIGNMET.postman_collection.json file in postman.
