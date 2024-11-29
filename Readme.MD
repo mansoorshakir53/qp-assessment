@@ -20,3 +20,10 @@ Down the project.
 ```bash
 docker-compose down --remove-orphans
 ```
+## Usage
+
+Import QP ASSIGNMET.postman_collection.json file in postman.
+
+![step 1](https://github.com/mansoorshakir53/qp-assessment/blob/master/public/step-1.png?raw=true)
+
+![step 1](https://github.com/mansoorshakir53/qp-assessment/blob/master/public/step-2.png?raw=true)
