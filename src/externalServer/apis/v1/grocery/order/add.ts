@@ -40,8 +40,6 @@ const orderGrocery = (route: Router) => {
                     item.stock = itemDetails.stock - item.quantity;
                 }
 
-                console.log(bodyPayload.orders);
-
                 const newOrder = await insertOrderTx({
                     user_id: req.user.id,
                     amount: totalOrderAmount,

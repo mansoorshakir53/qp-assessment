@@ -8,9 +8,7 @@
     "rollback-migration": "knex migrate:rollback --env configuration",
     "prestart": "npx knex migrate:latest --env configuration",
     "start": "node dist/index.js",
-    "dev": "npx nodemon src/index.ts",
-    "app-up": "docker-compose up --build",
-    "app-down": "docker-compose down --remove-orphans --volumes"
+    "dev": "npx nodemon src/index.ts"
   },
   "repository": {
     "type": "git",

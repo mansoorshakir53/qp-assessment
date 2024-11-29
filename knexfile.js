@@ -5,8 +5,6 @@ dotenv.config();
 
 const config = require('config');
 
-console.log(config.get('Database'));
-
 module.exports = {
   configuration: {
     client: 'pg',
