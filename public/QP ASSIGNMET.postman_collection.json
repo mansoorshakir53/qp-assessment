@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "6ad801d1-76af-4f33-a7cd-662ebff66f4f",
+		"name": "QP ASSIGNMET",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "12425647",
+		"_collection_link": "https://orange-space-749343.postman.co/workspace/57ec1760-e2e7-4bf8-b866-1803ebc372e8/collection/12425647-6ad801d1-76af-4f33-a7cd-662ebff66f4f?action=share&source=collection_link&creator=12425647"
+	},
+	"item": [
+		{
+			"name": "GROCERY",
+			"item": [
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "{{categoryId}}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "inventoryLevel",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "unit",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "expiredAt",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{baseUrl}}/grocery/add"
+					},
+					"response": []
+				},
+				{
+					"name": "LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/grocery/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"grocery",
+								"list"
+							],
+							"query": [
+								{
+									"key": "itemId",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "inStock",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "inventoryLevel",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "unit",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "startPrice",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "isExpired",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "inStore",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ORDER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orders\": [\n        {\n            \"itemId\": \"\",\n            \"quantity\": 0\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/grocery/order/add"
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/grocery/remove/{{groceryId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "hssahkjhjkhf",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "inventoryLevel",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "expiredAt",
+									"value": "1732708762764",
+									"type": "text"
+								},
+								{
+									"key": "inStore",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{baseUrl}}/grocery/update/{{groceryId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "LIST ORDER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/grocery/order/list?status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"grocery",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"email\": \"\",\n    \"password\": \"\",\n    \"role\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/user/login"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"\",\n    \"password\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/user/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CATEGORY",
+			"item": [
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/category/add"
+					},
+					"response": []
+				},
+				{
+					"name": "LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/category/list?inStore",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"category",
+								"list"
+							],
+							"query": [
+								{
+									"key": "inStore",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REMOVE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/category/remove/{{categoryId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"inStore\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/category/update/{{categoryId}}"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5050/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "groceryId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "categoryId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
